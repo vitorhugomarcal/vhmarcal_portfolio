@@ -286,8 +286,11 @@ export function App() {
       </div>
 
       <div className='border-[1px] border-slate-200 my-8 mx-8' />
-      <div className='flex bg-slate-800 rounded-md text-left items-center mx-8 px-4 py-2 w-fit my-6'>
-        <p className='text-blue-300'>👨‍💻 About me</p>
+     
+      <div className='flex justify-center items-center text-center'>
+        <div className='flex bg-slate-800 rounded-md text-left items-center mx-8 px-4 py-2 w-fit my-6'>
+          <p className='text-blue-300'>👨‍💻 About me</p>
+        </div>
       </div>
 
       <div className='lg:flex  lg:justify-center lg:items-center lg:text-center'>
@@ -297,8 +300,10 @@ export function App() {
       </div>
       <div className='border-[1px] border-slate-200 my-8 mx-8' />
       
-      <div className='flex bg-slate-800 rounded-md text-left items-center mx-8 px-4 py-2 w-fit my-6'>
-        <p className='text-blue-300'>🛠️ Projects</p>
+      <div className='flex justify-center items-center text-center'>
+        <div className='flex bg-slate-800 rounded-md text-left items-center mx-8 px-4 py-2 w-fit my-6'>
+          <p className='text-blue-300'>🛠️ Projects</p>
+        </div>
       </div>
 
       <div className='flex flex-col justify-center items-center'>
@@ -324,8 +329,10 @@ export function App() {
 
       <div className='border-[1px] border-slate-200 my-8 mx-8' />
 
-      <div className='flex bg-slate-800 rounded-md text-left items-center mx-8 px-4 py-2 w-fit my-6'>
-        <p className='text-blue-300'>🚀 Certificates</p>
+      <div className='flex justify-center items-center text-center'>
+        <div className='flex bg-slate-800 rounded-md text-left items-center mx-8 px-4 py-2 w-fit my-6'>
+          <p className='text-blue-300'>🚀 Certificates</p>
+        </div>
       </div>
 
       <div className='flex flex-col justify-center items-center'>
@@ -363,8 +370,10 @@ export function App() {
 
       <div className='border-[1px] border-slate-200 my-8 mx-8' />
 
-      <div className='flex bg-slate-800 rounded-md text-left items-center mx-8 px-4 py-2 w-fit my-6'>
-        <p className='text-blue-300'>📌 Contact</p>
+      <div className='flex justify-center items-center text-center'>
+        <div className='flex bg-slate-800 rounded-md text-left items-center mx-8 px-4 py-2 w-fit my-6'>
+          <p className='text-blue-300'>📌 Contact</p>
+        </div>
       </div>
 
       <div className=' flex mx-8 justify-center gap-4 items-center'>
@@ -382,7 +391,7 @@ export function App() {
 
       <footer className='flex justify-between mx-8 items-center mb-8'>
         <p className='text-sm font-light text-slate-500'>Copyright © Vitor Hugo Marçal - 2024</p>
-        <div className='flex-row gap-2 md:hidden flex'>
+        <div className='flex-row gap-2 flex'>
           <a href='https://www.linkedin.com/in/vhmarcal' target='blank' className='hover:ring-2 hover:ring-amber-500 hover:scale-110 rounded-full transition-all'>
             <img src={inSvg} alt="Acessar meu Linkedin" className='w-8 h-8' />
           </a>
