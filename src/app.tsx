@@ -120,7 +120,96 @@ export function App() {
         <div className='flex items-center justify-center w-10 h-full'>
           <img src={docker} className='w-10 h-10'/>
         </div>
-
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={firebase} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-10'>
+          <img src={mongodb} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-10'>
+          <img src={figma} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-10'>
+          <img src={photoshop} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-10'>
+          <img src={illustrator} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-10'>
+          <img src={after} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={html} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={css} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={react} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={javascript} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={typescript} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={tailwind} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={nodejs} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={git} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={docker} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={firebase} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-10'>
+          <img src={mongodb} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-10'>
+          <img src={figma} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-10'>
+          <img src={photoshop} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-10'>
+          <img src={illustrator} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-10'>
+          <img src={after} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={html} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={css} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={react} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={javascript} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={typescript} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={tailwind} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={nodejs} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={git} className='w-10 h-10'/>
+        </div>
+        <div className='flex items-center justify-center w-10 h-full'>
+          <img src={docker} className='w-10 h-10'/>
+        </div>
         <div className='flex items-center justify-center w-10 h-full'>
           <img src={firebase} className='w-10 h-10'/>
         </div>
@@ -185,6 +274,7 @@ export function App() {
           <img src={after} className='w-10 h-10'/>
         </div>
       </div>
+      
       <div className="absolute inset-0 bg-gradient-to-r from-slate-300 via-transparent to-slate-300"></div>
     </div>
       <div className='lg:justify-center lg:flex'>

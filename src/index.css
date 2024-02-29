@@ -13,6 +13,6 @@
 
 @layer utilities {
   .animate-scroll-left {
-    animation: scrollLeft 30s linear infinite; /* Ajuste a duração conforme necessário */
+    animation: scrollLeft 60s linear infinite; /* Ajuste a duração conforme necessário */
   }
 }
