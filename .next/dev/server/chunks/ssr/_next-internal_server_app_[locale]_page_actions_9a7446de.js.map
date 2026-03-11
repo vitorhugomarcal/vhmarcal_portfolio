@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/vhmarcal/vhmarcal_portfolio/.next-internal/server/app/%5Blocale%5D/page/actions.js%20%28server%20actions%20loader%29"],"sourcesContent":["export {getUserLocale as '007e69733d3af8c9694967550c473cd1d568cac889'} from 'ACTIONS_MODULE0'\nexport {setUserLocale as '405c295cb770f5221b73278a38357c15db1e7c56b6'} from 'ACTIONS_MODULE0'\n"],"names":[],"mappings":";AAAA"}}]
+}

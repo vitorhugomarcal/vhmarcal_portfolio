@@ -1,0 +1,36 @@
+{
+  "node": {
+    "007e69733d3af8c9694967550c473cd1d568cac889": {
+      "workers": {
+        "app/[locale]/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/i18n/service.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getUserLocale",
+          "filename": "src/i18n/service.ts"
+        }
+      },
+      "layer": {
+        "app/[locale]/page": "rsc"
+      },
+      "filename": "src/i18n/service.ts",
+      "exportedName": "getUserLocale"
+    },
+    "405c295cb770f5221b73278a38357c15db1e7c56b6": {
+      "workers": {
+        "app/[locale]/page": {
+          "moduleId": "[project]/.next-internal/server/app/[locale]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/i18n/service.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "setUserLocale",
+          "filename": "src/i18n/service.ts"
+        }
+      },
+      "layer": {
+        "app/[locale]/page": "rsc"
+      },
+      "filename": "src/i18n/service.ts",
+      "exportedName": "setUserLocale"
+    }
+  },
+  "edge": {},
+  "encryptionKey": "FrY+l53iIiIdTuYftQzREFnOnsSew9TWP4wBH54LICg="
+}
