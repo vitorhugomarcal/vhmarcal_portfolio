@@ -46,9 +46,9 @@ export default function Home() {
   return (
     <>
       <LanguageSwitcher />
-      
+
       <div className='flex flex-col lg:flex-row px-8 pt-8 min-h-screen justify-between lg:justify-center lg:gap-8 lg:items-center'>
-        
+
         {/* Mobile Header Socials */}
         <motion.header
           className='md:hidden flex flex-col items-center justify-center'
@@ -242,7 +242,7 @@ export default function Home() {
           <p className='text-slate-700 leading-relaxed'>
             {tAbout('intro')}
           </p>
-          
+
           <div className='bg-slate-50 p-6 rounded-2xl border border-slate-200 text-left'>
             <h3 className='font-bold text-slate-900 mb-3 flex items-center gap-2'>
               <span className='text-xl'>🤖</span> {tAbout('aiTitle')}
@@ -263,7 +263,7 @@ export default function Home() {
           <p className='text-slate-700 leading-relaxed'>
             {tAbout('outro')}
           </p>
-          
+
           <p className='text-slate-800 font-medium pt-2 italic text-center'>
             {tAbout('quote')}
           </p>
@@ -294,6 +294,15 @@ export default function Home() {
       </div>
 
       <div className='flex flex-col justify-center items-center w-full'>
+        <Project
+          image="/sales-orbizy.png"
+          title='Orbizy Sales'
+          content={tProjects('sales.desc')}
+          subcontent={tProjects('sales.sub')}
+          android='https://sales.orbizy.app'
+          visitLabel={tProjects('visit')}
+        />
+
         <Project
           image="/invoice_orbizy.webp"
           title='Orbizy Invoice'
@@ -369,39 +378,39 @@ export default function Home() {
       </div>
 
       <div className='flex flex-col justify-center items-center w-full'>
-        <Certificate 
-          image="/c1.png" 
-          title='React Native - 75h' 
-          content='Fundamentos React Native e Expo, Navegação e Armazenamento local, Component Library e Formulários, Consumo de API, Push Notifications e Deep Linking, Animações e Microinterações, Offline First e Mapas, Testes e Deploy.' 
-          link='https://app.rocketseat.com.br/certificates/047941f3-2319-4967-911e-abc30bead2fb' 
+        <Certificate
+          image="/c1.png"
+          title='React Native - 75h'
+          content='Fundamentos React Native e Expo, Navegação e Armazenamento local, Component Library e Formulários, Consumo de API, Push Notifications e Deep Linking, Animações e Microinterações, Offline First e Mapas, Testes e Deploy.'
+          link='https://app.rocketseat.com.br/certificates/047941f3-2319-4967-911e-abc30bead2fb'
           label={tCertificates('show')}
         />
-        <Certificate 
-          image="/c2.png" 
-          title='Especializar - 11h' 
-          content='JavaScript Assíncrono e Promises, APIs, Fundamentos de ReactJS e TypeScript, GitHub para times, CSS Transition e Animation, SQL Avançado.' 
-          link='https://app.rocketseat.com.br/certificates/33b340f5-5e2d-449b-86e2-53dec1b13822' 
+        <Certificate
+          image="/c2.png"
+          title='Especializar - 11h'
+          content='JavaScript Assíncrono e Promises, APIs, Fundamentos de ReactJS e TypeScript, GitHub para times, CSS Transition e Animation, SQL Avançado.'
+          link='https://app.rocketseat.com.br/certificates/33b340f5-5e2d-449b-86e2-53dec1b13822'
           label={tCertificates('show')}
         />
-        <Certificate 
-          image="/c3.png" 
-          title='Fundamentar - 28h' 
-          content='Fundamentos de HTML, CSS, JavaScript, DOM, Terminal, NodeJS, EJS, SQL, Estrutura de Dados, Programação Orientada a Objetos, Programação Funcional, Git, GitHub e HTTP.' 
-          link='https://app.rocketseat.com.br/certificates/5809b945-957d-466a-8213-344a3850995f' 
+        <Certificate
+          image="/c3.png"
+          title='Fundamentar - 28h'
+          content='Fundamentos de HTML, CSS, JavaScript, DOM, Terminal, NodeJS, EJS, SQL, Estrutura de Dados, Programação Orientada a Objetos, Programação Funcional, Git, GitHub e HTTP.'
+          link='https://app.rocketseat.com.br/certificates/5809b945-957d-466a-8213-344a3850995f'
           label={tCertificates('show')}
         />
-        <Certificate 
-          image="/c4.png" 
-          title='NLW Expert - React - 5h' 
-          content='Desenvolvimento de uma aplicação front-end em ReactJS, aplicação dos conceitos de Propriedades, Estados e Componentes, tipagem com Typescript, tooling com Vite, interface responsiva com TailwindCSS, uso de APIs da Web como Web Storage e Web Speech.' 
-          link='https://app.rocketseat.com.br/certificates/55d3a2ef-155f-4e3b-bf92-feb103601ff1' 
+        <Certificate
+          image="/c4.png"
+          title='NLW Expert - React - 5h'
+          content='Desenvolvimento de uma aplicação front-end em ReactJS, aplicação dos conceitos de Propriedades, Estados e Componentes, tipagem com Typescript, tooling com Vite, interface responsiva com TailwindCSS, uso de APIs da Web como Web Storage e Web Speech.'
+          link='https://app.rocketseat.com.br/certificates/55d3a2ef-155f-4e3b-bf92-feb103601ff1'
           label={tCertificates('show')}
         />
-        <Certificate 
-          image="/c5.png" 
-          title='NLW Expert - React Native - 5h' 
-          content='Desenvolvimento de uma aplicação mobile em React Native, aplicação dos conceitos de Propriedades, Estados e Componentes, tipagem com Typescript, Expo Framework, interface com Native Wind, gerenciamento de estado global com Zustand, roteamento por arquivos com Expo Router.' 
-          link='https://app.rocketseat.com.br/certificates/e315f246-75ae-4463-a379-bc39548991f9' 
+        <Certificate
+          image="/c5.png"
+          title='NLW Expert - React Native - 5h'
+          content='Desenvolvimento de uma aplicação mobile em React Native, aplicação dos conceitos de Propriedades, Estados e Componentes, tipagem com Typescript, Expo Framework, interface com Native Wind, gerenciamento de estado global com Zustand, roteamento por arquivos com Expo Router.'
+          link='https://app.rocketseat.com.br/certificates/e315f246-75ae-4463-a379-bc39548991f9'
           label={tCertificates('show')}
         />
       </div>

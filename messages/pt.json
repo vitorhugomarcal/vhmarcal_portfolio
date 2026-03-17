@@ -24,6 +24,10 @@
     "title": "🛠️ Projetos",
     "visit": "Visitar Website",
     "github": "Ver todos os projetos no Github",
+    "sales": {
+      "sub": "Plataforma de Vendas Enterprise",
+      "desc": "Uma plataforma completa de vendas enterprise, criada para centralizar todo o ciclo comercial — da prospecção ao contrato, passando por aprovação, financeiro e operação. Mais do que um CRM, o Orbizy Sales conecta todas as áreas envolvidas no processo de venda em um único fluxo inteligente."
+    },
     "invoice": {
       "sub": "Plataforma de Gestão Empresarial B2B",
       "desc": "💼 Um SaaS completo de ERP e gestão empresarial. Ajudando milhares de empreendedores a profissionalizarem suas operações com faturamento profissional, CRM e relatórios financeiros em tempo real. 🚀"

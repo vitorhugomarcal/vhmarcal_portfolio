@@ -24,6 +24,10 @@
     "title": "🛠️ Projects",
     "visit": "Visit Website",
     "github": "Show all projects on Github",
+    "sales": {
+      "sub": "Enterprise Sales Platform",
+      "desc": "A complete enterprise sales platform, created to centralize the entire commercial cycle — from prospecting to contract, including approval, finance, and operations. More than a CRM, Orbizy Sales connects all areas involved in the sales process in a single intelligent flow."
+    },
     "invoice": {
       "sub": "B2B Business Management Platform",
       "desc": "💼 A complete Enterprise Resource Planning (ERP) and business management SaaS. Helping thousands of entrepreneurs professionalize their operations with professional invoicing, CRM, and real-time financial reporting. 🚀"
