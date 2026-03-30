@@ -22,9 +22,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       template: "%s | Vitor Hugo Marçal",
     },
     description: t('description'),
-    keywords: ["Vitor Hugo Marçal", "FullStack Developer", "React Developer", "Node.js Expert", "Mobile Developer", "React Native", "Portfolio", "Software Engineer", "São Paulo", "Brazil", "Orbizy", "IPSEC"],
+    keywords: ["Vitor Hugo Marçal", "FullStack Developer", "React Developer", "Node.js Expert", "Mobile Developer", "React Native", "Portfolio", "Software Engineer", "São Paulo", "Brazil", "Orbizy", "IPSEC", "Web Performance", "AI-Integrated Development"],
     authors: [{ name: "Vitor Hugo Marçal", url: baseUrl }],
     creator: "Vitor Hugo Marçal",
+    publisher: "Vitor Hugo Marçal",
     openGraph: {
       type: "website",
       locale: locale === 'pt' ? 'pt_BR' : 'en_US',
@@ -49,12 +50,22 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     alternates: {
       canonical: baseUrl,
+      languages: {
+        'pt-BR': `${baseUrl}/pt`,
+        'en-US': `${baseUrl}/en`,
+      },
     },
     icons: {
       icon: [
         { url: '/favicon-light.png', media: '(prefers-color-scheme: light)' },
         { url: '/favicon-dark.png', media: '(prefers-color-scheme: dark)' },
       ],
+      apple: [
+        { url: '/favicon-light.png' },
+      ],
+    },
+    verification: {
+      google: "google-site-verification-id", // SUBSTITUA PELO SEU ID DO SEARCH CONSOLE
     },
     robots: {
       index: true,
@@ -83,13 +94,10 @@ export default async function RootLayout({
 }) {
   const { locale } = await params;
   
-  // Ensure that the incoming `locale` is valid
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
 
   const jsonLd = {
@@ -98,13 +106,23 @@ export default async function RootLayout({
     "name": "Vitor Hugo Marçal",
     "jobTitle": "Senior FullStack Developer",
     "url": baseUrl,
+    "image": `${baseUrl}/eu.jpg`,
     "sameAs": [
       "https://www.linkedin.com/in/vhmarcal",
       "https://github.com/vitorhugomarcal",
       "https://instagram.com/vitorhugomarcal"
     ],
-    "description": "Developer specializing in React.js and React Native with 6+ years of experience building exceptional digital products.",
-    "knowsAbout": ["React", "React Native", "Node.js", "TypeScript", "JavaScript", "Tailwind CSS", "Next.js", "PostgreSQL", "MongoDB"]
+    "description": "Senior FullStack Developer with 6+ years of experience specializing in high-performance Web and Mobile applications using React, React Native, and Node.js. Expert in AI-driven development workflows.",
+    "knowsAbout": ["React", "React Native", "Node.js", "TypeScript", "JavaScript", "Tailwind CSS", "Next.js", "PostgreSQL", "MongoDB", "IA-Integrated Workflow", "Software Architecture"],
+    "knowsLanguage": [
+      { "@type": "Language", "name": "Portuguese", "alternateName": "pt" },
+      { "@type": "Language", "name": "English", "alternateName": "en" }
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Orbizy",
+      "url": "https://orbizy.app"
+    }
   };
 
   return (
