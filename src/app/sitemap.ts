@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.orbizy.app'
+  const baseUrl = 'https://orbizy.app'
   const locales = ['pt', 'en']
 
   return [

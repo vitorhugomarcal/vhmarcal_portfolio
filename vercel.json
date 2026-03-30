@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.orbizy.app"
+        }
+      ],
+      "destination": "https://orbizy.app/:path*",
+      "permanent": true
+    }
+  ]
+}
