@@ -49,10 +49,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       images: ["/eu.jpg"],
     },
     alternates: {
-      canonical: baseUrl,
+      canonical: locale === 'pt' ? baseUrl : `${baseUrl}/${locale}`,
       languages: {
-        'pt-BR': `${baseUrl}/pt`,
+        'pt-BR': baseUrl,
         'en-US': `${baseUrl}/en`,
+        'x-default': baseUrl,
       },
     },
     icons: {

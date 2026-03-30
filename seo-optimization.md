@@ -5,8 +5,8 @@ This plan outlines the steps to consolidate `orbizy.app` as the primary, non-www
 ## 1. Analysis of Current Status
 - **Canonical mismatch**: `layout.tsx` uses `https://orbizy.app`, but `robots.ts` and `sitemap.ts` use `https://www.orbizy.app`.
 - **Redirect Chain**: 
-  - `http://orbizy.app` -> `https://orbizy.app` -> `https://www.orbizy.app` (307/308 chain).
-  - Goal: All paths -> `https://orbizy.app` (200 OK).
+  - `http://orbizy.app` -> `https://orbizy.app` -> `https://orbizy.app/pt` (307/308 chain).
+  - Goal: `https://orbizy.app` returns **200 OK** directly (Default language served at root).
 
 ## 2. Technical Modifications
 
@@ -40,7 +40,10 @@ Update the sitemap reference to use the apex domain.
 ```
 
 ### Step C: Standardize Sitemap Generation (`src/app/sitemap.ts`)
-Update the `baseUrl` constant to ensure all generated URLs in the XML sitemap are canonical.
+Update the generator to follow the "as-needed" logic where the default locale (`pt`) uses the base domain.
+
+### Step E: Configure `next-intl` Routing (`src/i18n/routing.ts`)
+Set `localePrefix: 'as-needed'` to serve the default locale without the `/pt` path.
 
 ```diff
 - const baseUrl = 'https://www.orbizy.app'
