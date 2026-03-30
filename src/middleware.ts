@@ -5,7 +5,13 @@ export default createMiddleware({
   locales: ['en', 'pt'],
  
   // Used when no locale matches
-  defaultLocale: 'pt'
+  defaultLocale: 'pt',
+
+  // No prefix for the default locale
+  localePrefix: 'as-needed',
+
+  // Disable automatic detection to keep the root path static
+  localeDetection: false
 });
  
 export const config = {
