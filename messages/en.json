@@ -1,4 +1,9 @@
 {
+  "Metadata": {
+    "title": "Vitor Hugo Marçal | Full Stack Developer | Orbizy",
+    "description": "Vitor Hugo Marçal: senior Full Stack developer with over 6 years of experience in React, React Native and Node.js. Explore my web, mobile and SaaS projects.",
+    "siteName": "Orbizy | Vitor Hugo Marçal"
+  },
   "Hero": {
     "hello": "👋 Hello!",
     "fullstack": "Senior FullStack Developer | AI-Driven Software Engineer",
@@ -43,7 +48,8 @@
     "habits": {
       "sub": "Habit Tracking App",
       "desc": "After NLW, I decided to develop more features for this daily habit tracking app. I implemented the social login screen, added notifications, and incorporated some animations that made the app much more personalized."
-    }
+    },
+    "other": "More Projects"
   },
   "Experience": {
     "years": "years as a"
@@ -57,5 +63,88 @@
   },
   "Footer": {
     "copyright": "Copyright © Vitor Hugo Marçal"
+  },
+  "Opening": {
+    "skip": "Skip to projects",
+    "navigation": "Main navigation",
+    "navProjects": "Projects",
+    "navAbout": "About",
+    "navContact": "Contact",
+    "role": "Senior Full Stack Developer",
+    "headline1": "Ideas into code.",
+    "headline2": "Products with",
+    "headline3": "purpose",
+    "intro": "I'm <name>Vitor Hugo Marçal</name>. I build web, mobile and SaaS applications, connecting intuitive interfaces with solid engineering.",
+    "explore": "Explore projects",
+    "chat": "Let's talk",
+    "experience1": "years building",
+    "experience2": "digital solutions",
+    "specialties": "From interface to architecture.",
+    "portraitCaption": "Code, design and curiosity.",
+    "portraitNote": "Great experiences start with the details.",
+    "scroll": "Discover my work",
+    "workLabel": "Selected work",
+    "workTitle": "From concept to product",
+    "workIntro": "Solutions to real challenges. A selection of what I've been building in the Orbizy ecosystem.",
+    "categories": "Project categories",
+    "visit": "Explore product",
+    "moreWork": "More projects and experience",
+    "sales": {
+      "category": "Sales platform",
+      "description": "From prospecting to contracts, a connected flow for sales, approvals and operations. The entire commercial cycle in one place.",
+      "imageAlt": "Orbizy Sales dashboard with metrics and sales pipeline stages on a laptop"
+    },
+    "invoice": {
+      "category": "Business management",
+      "description": "Invoicing, customers and finances brought together to simplify the day-to-day work of running a business.",
+      "imageAlt": "Orbizy Invoice customer, item and quote screens on three phones"
+    },
+    "play": {
+      "category": "Apple ecosystem",
+      "description": "An IPTV experience for iPhone, iPad, Mac and Apple TV, with iCloud synchronization.",
+      "imageAlt": "Orbizy Play playback and playlist setup screens on two iPhones"
+    }
+  },
+  "Details": {
+    "aboutLabel": "About me",
+    "aboutTitle": "Engineering with a product mindset",
+    "stackLabel": "Everyday tools",
+    "interfaces": {
+      "title": "Interfaces that make sense",
+      "description": "From Figma to the application, with attention to clarity and the user experience."
+    },
+    "development": {
+      "title": "Connected web and mobile",
+      "description": "React and React Native applications, with Node.js and TypeScript APIs."
+    },
+    "architecture": {
+      "title": "A foundation to build on",
+      "description": "Performance, scalability, SQL and NoSQL databases, Docker and CI/CD."
+    },
+    "aiTitle": "AI as part of the process",
+    "moreLabel": "More experience",
+    "moreIntro": "Other projects from my journey in mobile development.",
+    "taImageAlt": "T.A. Personal sign-in screen on a phone",
+    "habitsImageAlt": "The habit creation interface in the Habits application",
+    "certificatesLabel": "Continuous learning",
+    "certificatesTitle": "Learning to build better",
+    "certificatesIntro": "Courses and learning experiences that complement hands-on work. Certificates issued by Rocketseat.",
+    "viewCertificate": "View certificate",
+    "courseTopics": "Course content",
+    "certificateImage": "Certificate image",
+    "contactLabel": "Let's talk",
+    "contactTitle": "Your next product starts with a conversation",
+    "contactIntro": "Have an idea, a technical challenge or an opportunity? Let's talk about how I can contribute.",
+    "whatsapp": "Chat on WhatsApp",
+    "emailLabel": "Or, if you prefer, by email",
+    "backToTop": "Back to top",
+    "socialLinks": "Professional and social profiles",
+    "courses": {
+      "reactNative": "React Native and Expo fundamentals, navigation and local storage, component libraries and forms, API consumption, push notifications and deep linking, animations and microinteractions, offline-first applications and maps, testing and deployment.",
+      "specialize": "Asynchronous JavaScript and promises, APIs, ReactJS and TypeScript fundamentals, GitHub for teams, CSS transitions and animations, advanced SQL.",
+      "discover": "HTML, CSS, JavaScript, DOM, terminal, Node.js, EJS and SQL fundamentals, data structures, object-oriented programming, functional programming, Git, GitHub and HTTP.",
+      "expertReact": "Building a ReactJS front-end application with props, state and components, TypeScript, Vite tooling, responsive interfaces with TailwindCSS, and Web APIs including Web Storage and Web Speech.",
+      "expertNative": "Building a React Native mobile application with props, state and components, TypeScript, Expo, Native Wind interfaces, global state with Zustand, and file-based routing with Expo Router."
+    }
   }
 }

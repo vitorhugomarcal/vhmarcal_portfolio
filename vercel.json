@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/pt",
+      "destination": "https://orbizy.app/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {

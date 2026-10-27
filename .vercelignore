@@ -1,0 +1,9 @@
+.agent/
+.github/
+.next/
+.vercel/
+node_modules/
+*.tsbuildinfo
+seo-optimization.md
+CNAME
+artifacts/

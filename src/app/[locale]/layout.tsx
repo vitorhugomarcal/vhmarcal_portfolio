@@ -1,24 +1,29 @@
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '../../i18n/routing';
+import { getPageUrl, languageAlternates, siteUrl as baseUrl } from '../../lib/seo';
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
-const baseUrl = "https://orbizy.app";
+const inter = localFont({
+  src: '../../../public/fonts/inter-latin.woff2',
+  display: 'swap',
+  weight: '100 900',
+  style: 'normal',
+});
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'Hero' });
+  if (!hasLocale(routing.locales, locale)) notFound();
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
 
   return {
     metadataBase: new URL(baseUrl),
     title: {
-      default: "Vitor Hugo Marçal | Senior FullStack Developer",
+      default: t('title'),
       template: "%s | Vitor Hugo Marçal",
     },
     description: t('description'),
@@ -29,44 +34,35 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       type: "website",
       locale: locale === 'pt' ? 'pt_BR' : 'en_US',
-      url: baseUrl,
-      title: "Vitor Hugo Marçal | FullStack Developer",
+      url: getPageUrl(locale),
+      title: t('title'),
       description: t('description'),
-      siteName: "Vitor Hugo Marçal Portfolio",
+      siteName: t('siteName'),
       images: [
         {
           url: "/eu.jpg",
-          width: 1200,
-          height: 630,
           alt: "Vitor Hugo Marçal - FullStack Developer",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Vitor Hugo Marçal | FullStack Developer",
+      title: t('title'),
       description: t('description'),
       images: ["/eu.jpg"],
     },
     alternates: {
-      canonical: locale === 'pt' ? baseUrl : `${baseUrl}/${locale}`,
-      languages: {
-        'pt-BR': baseUrl,
-        'en-US': `${baseUrl}/en`,
-        'x-default': baseUrl,
-      },
+      canonical: getPageUrl(locale),
+      languages: languageAlternates,
     },
     icons: {
       icon: [
-        { url: '/favicon-light.png', media: '(prefers-color-scheme: light)' },
-        { url: '/favicon-dark.png', media: '(prefers-color-scheme: dark)' },
+        { url: '/favicon-light-64.png', sizes: '64x64', type: 'image/png', media: '(prefers-color-scheme: light)' },
+        { url: '/favicon-dark-64.png', sizes: '64x64', type: 'image/png', media: '(prefers-color-scheme: dark)' },
       ],
       apple: [
-        { url: '/favicon-light.png' },
+        { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
       ],
-    },
-    verification: {
-      google: "google-site-verification-id", // SUBSTITUA PELO SEU ID DO SEARCH CONSOLE
     },
     robots: {
       index: true,
@@ -95,17 +91,24 @@ export default async function RootLayout({
 }) {
   const { locale } = await params;
   
-  if (!routing.locales.includes(locale as any)) {
+  if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
-  const messages = await getMessages();
+  setRequestLocale(locale);
+  const [messages, t, tHero] = await Promise.all([
+    getMessages({locale}),
+    getTranslations({locale, namespace: 'Metadata'}),
+    getTranslations({locale, namespace: 'Hero'}),
+  ]);
 
   const jsonLd = {
     "@context": "https://schema.org",
+    "@graph": [{
     "@type": "Person",
+    "@id": `${baseUrl}/#person`,
     "name": "Vitor Hugo Marçal",
-    "jobTitle": "Senior FullStack Developer",
+    "jobTitle": tHero('fullstack'),
     "url": baseUrl,
     "image": `${baseUrl}/eu.jpg`,
     "sameAs": [
@@ -113,7 +116,7 @@ export default async function RootLayout({
       "https://github.com/vitorhugomarcal",
       "https://instagram.com/vitorhugomarcal"
     ],
-    "description": "Senior FullStack Developer with 6+ years of experience specializing in high-performance Web and Mobile applications using React, React Native, and Node.js. Expert in AI-driven development workflows.",
+    "description": t('description'),
     "knowsAbout": ["React", "React Native", "Node.js", "TypeScript", "JavaScript", "Tailwind CSS", "Next.js", "PostgreSQL", "MongoDB", "IA-Integrated Workflow", "Software Architecture"],
     "knowsLanguage": [
       { "@type": "Language", "name": "Portuguese", "alternateName": "pt" },
@@ -124,18 +127,36 @@ export default async function RootLayout({
       "name": "Orbizy",
       "url": "https://orbizy.app"
     }
+    }, {
+      "@type": "WebSite",
+      "@id": `${baseUrl}/#website`,
+      "url": baseUrl,
+      "name": t('siteName'),
+      "inLanguage": ["pt-BR", "en"],
+      "author": {"@id": `${baseUrl}/#person`}
+    }, {
+      "@type": "ProfilePage",
+      "@id": `${getPageUrl(locale)}#profile`,
+      "url": getPageUrl(locale),
+      "name": t('title'),
+      "description": t('description'),
+      "inLanguage": locale === 'pt' ? 'pt-BR' : 'en',
+      "isPartOf": {"@id": `${baseUrl}/#website`},
+      "mainEntity": {"@id": `${baseUrl}/#person`}
+    }]
   };
 
   return (
-    <html lang={locale}>
+    <html lang={locale === 'pt' ? 'pt-BR' : 'en'}>
       <head>
+        <noscript><style>{'[data-reveal] { opacity: 1 !important; transform: none !important; }'}</style></noscript>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
         />
       </head>
       <body className={inter.className}>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
       </body>

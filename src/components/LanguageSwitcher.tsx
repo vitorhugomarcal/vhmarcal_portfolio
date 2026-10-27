@@ -1,30 +1,27 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { useRouter, usePathname } from '../i18n/routing';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { getPathname, usePathname } from '../i18n/routing';
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
-
-  const toggleLanguage = () => {
-    const nextLocale = locale === 'pt' ? 'en' : 'pt';
-    router.replace(pathname, { locale: nextLocale });
-  };
-
+  const nextLocale = locale === 'pt' ? 'en' : 'pt';
+  const [hash, setHash] = useState('');
+  useEffect(() => {
+    const update = () => setHash(window.location.hash);
+    update();
+    window.addEventListener('hashchange', update);
+    return () => window.removeEventListener('hashchange', update);
+  }, []);
   return (
-    <motion.button
-      onClick={toggleLanguage}
-      className="fixed top-8 right-8 z-50 bg-white/80 backdrop-blur-md border border-slate-200 px-4 py-2 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center gap-2 font-medium text-slate-700"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      <span className="text-lg">{locale === 'pt' ? '🇺🇸' : '🇧🇷'}</span>
-      <span>{locale === 'pt' ? 'English' : 'Português'}</span>
-    </motion.button>
+    <a href={getPathname({ locale: nextLocale, href: pathname }) + hash}
+      hrefLang={nextLocale === 'pt' ? 'pt-BR' : 'en'} lang={nextLocale === 'pt' ? 'pt-BR' : 'en'}
+      aria-label={locale === 'pt' ? 'Switch to English' : 'Mudar para português'} className="language-switcher">
+      <span className={locale === 'pt' ? 'current-language' : undefined} lang="pt-BR">PT</span>
+      <span className="language-separator" aria-hidden="true">/</span>
+      <span className={locale === 'en' ? 'current-language' : undefined} lang="en">EN</span>
+    </a>
   );
 }

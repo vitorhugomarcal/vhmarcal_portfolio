@@ -9,7 +9,10 @@ export const routing = defineRouting({
   defaultLocale: 'pt',
 
   // No prefix for the default locale
-  localePrefix: 'as-needed'
+  localePrefix: 'as-needed',
+  localeDetection: false,
+  // Canonical hreflang URLs are emitted in metadata and the sitemap.
+  alternateLinks: false
 });
  
 // Lightweight wrappers around Next.js' navigation APIs

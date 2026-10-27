@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { siteUrl } from '../lib/seo'
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -7,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://orbizy.app/sitemap.xml',
+    sitemap: `${siteUrl}/sitemap.xml`,
   }
 }

@@ -1,10 +1,12 @@
 import {getRequestConfig} from 'next-intl/server';
-import {getUserLocale} from './service';
+import {hasLocale} from 'next-intl';
+import {routing} from './routing';
 
-export default getRequestConfig(async () => {
-  // Provide a static locale, fetch a user setting,
-  // read from a cookie or analyze the request
-  const locale = await getUserLocale();
+export default getRequestConfig(async ({requestLocale}) => {
+  const requestedLocale = await requestLocale;
+  const locale = hasLocale(routing.locales, requestedLocale)
+    ? requestedLocale
+    : routing.defaultLocale;
  
   return {
     locale,

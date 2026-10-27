@@ -1,33 +1,20 @@
-import { motion } from 'framer-motion'
-import { ReactNode } from 'react'
+'use client';
+
+import { m } from 'framer-motion';
+import type { ReactNode } from 'react';
+import { useReveal } from './useReveal';
 
 interface Props {
-  children: ReactNode
-  className?: string
-  delay?: number
-  direction?: 'up' | 'down' | 'left' | 'right' | 'none'
+  children: ReactNode;
+  className?: string;
+  delay?: number;
 }
 
-export function AnimatedSection({ children, className, delay = 0, direction = 'up' }: Props) {
-  const directionMap = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { y: 0, x: 40 },
-    right: { y: 0, x: -40 },
-    none: { y: 0, x: 0 },
-  }
-
-  const initial = { opacity: 0, ...directionMap[direction] }
-
+export function AnimatedSection({ children, className, delay = 0 }: Props) {
+  const reveal = useReveal();
   return (
-    <motion.div
-      className={className}
-      initial={initial}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
-    >
+    <m.div className={className} {...reveal(delay)}>
       {children}
-    </motion.div>
-  )
+    </m.div>
+  );
 }

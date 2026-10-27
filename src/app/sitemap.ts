@@ -1,24 +1,10 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next';
+import { routing } from '../i18n/routing';
+import { getPageUrl, languageAlternates } from '../lib/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://orbizy.app'
-  const locales = ['pt', 'en']
-
-  return locales.map((locale) => {
-    const isDefault = locale === 'pt'
-    const url = isDefault ? baseUrl : `${baseUrl}/${locale}`
-
-    return {
-      url,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: isDefault ? 1 : 0.8,
-      alternates: {
-        languages: {
-          pt: baseUrl,
-          en: `${baseUrl}/en`,
-        },
-      },
-    }
-  })
+  return routing.locales.map((locale) => ({
+    url: getPageUrl(locale),
+    alternates: { languages: languageAlternates },
+  }));
 }

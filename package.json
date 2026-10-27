@@ -7,7 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seo:check": "node scripts/check-seo.mjs",
+    "assets:check": "node scripts/check-assets.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.35.2",

@@ -1,56 +1,41 @@
-"use client";
+'use client';
 
-import { ShieldCheck } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowUpRight, ChevronDown } from 'lucide-react';
+import { AnimatedSection } from './AnimatedSection';
 
 interface Props {
+  index: string;
   title: string;
+  hours: string;
+  provider: string;
   content: string;
-  link: string;
   image: string;
-  label?: string;
+  originalImage: string;
+  link: string;
+  label: string;
+  topicsLabel: string;
+  imageLabel: string;
 }
 
-export function Certificate({image, title, content, link, label = 'Show certificate'}: Props) {
+export function Certificate({ index, title, hours, provider, content, image, originalImage, link, label, topicsLabel, imageLabel }: Props) {
   return (
-    <motion.div
-      className="max-w-md mx-8 mb-8 bg-white rounded-xl shadow-md overflow-hidden md:max-w-3xl lg:max-w-6xl w-full"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-      whileHover={{ y: -4, boxShadow: "0 20px 40px rgba(0,0,0,0.12)" }}
-    >
-      <div className="md:flex lg:justify-center lg:items-center">
-        <div className="md:shrink-0 overflow-hidden">
-          <motion.img
-            className="h-48 w-full object-cover md:h-full md:object-right md:w-80 lg:w-full lg:h-80"
-            src={image}
-            alt={title}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.4 }}
-          />
-        </div>
-        <div className="p-8">
-          <div className="flex flex-row text-center items-center gap-1 uppercase tracking-wide text-sm text-indigo-500 font-semibold">
-            <ShieldCheck className='w-4 h-4' />
-            {title}
+    <AnimatedSection>
+      <article className="certificate-row">
+        <span className="certificate-index" aria-hidden="true">{index}</span>
+        <div className="certificate-name"><h3>{title}</h3><p>{provider}<span aria-hidden="true"> / </span><span>{hours}</span></p></div>
+        <details className="certificate-topics">
+          <summary aria-label={topicsLabel + ' · ' + title}>{topicsLabel}<ChevronDown size={15} aria-hidden="true" /></summary>
+          <div className="certificate-expanded">
+            <p>{content}</p>
+            <a href={originalImage} target="_blank" rel="noopener noreferrer" aria-label={imageLabel + ' · ' + title}>
+              <img src={image} srcSet={`${image.replace('.webp', '-360.webp')} 360w, ${image} 720w`} sizes="(max-width: 760px) 240px, 200px" alt={imageLabel + ' · ' + title} width={720} height={441} loading="lazy" decoding="async" />
+            </a>
           </div>
-          <p className="mt-2 text-slate-500">{content}</p>
-          <div className='flex gap-4 mt-4 items-center justify-center'>
-            <motion.a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-md leading-tight font-light text-indigo-500 hover:underline"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {label}
-            </motion.a>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  )
+        </details>
+        <a className="certificate-verify" href={link} target="_blank" rel="noopener noreferrer" aria-label={label + ' · ' + title}>
+          {label}<ArrowUpRight size={17} aria-hidden="true" />
+        </a>
+      </article>
+    </AnimatedSection>
+  );
 }
